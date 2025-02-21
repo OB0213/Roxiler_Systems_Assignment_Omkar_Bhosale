@@ -2,14 +2,16 @@ const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose');
 const router=require('./routes/routesData.js');
+const dotenv=require('dotenv');
 const app=express();
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use('/routes',router);
 mongoose
   .connect(
-    "mongodb+srv://omkarbhosale912:JyCJHPDUZJ6sBoSX@cluster0.gcexi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+   process.env.MONGO_URL
   )
   .then((data) => {
     console.log("Mongodb connected Successfully");
