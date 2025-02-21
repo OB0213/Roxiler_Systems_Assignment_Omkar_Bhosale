@@ -1,0 +1,1 @@
+The project is regarding showing transaction details about items displayed in the given api.It consists of pagination,bargraph of number of items at a particular cost range in particular month and sales details.
